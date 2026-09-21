@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bmdw73f4dy4ps" path="res://pixel-art (4).png" id="2_qhqgy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_42yap"]
-radius = 145.0
+radius = 130.31117
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7xapb"]
+radius = 126.035706
 
 [node name="Player" type="CharacterBody2D" unique_id=1218335389]
 script = ExtResource("1_g2els")
@@ -14,5 +17,11 @@ position = Vector2(154, 486)
 texture = ExtResource("2_qhqgy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1322011541]
-position = Vector2(144, 497)
+position = Vector2(151, 495)
 shape = SubResource("CircleShape2D_42yap")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=541982332]
+position = Vector2(149, 494)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1843080017]
+shape = SubResource("CircleShape2D_7xapb")

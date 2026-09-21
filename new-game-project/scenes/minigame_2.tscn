@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://d1c0qlfnfpa44" path="res://a.jpg" id="2_ihuf6"]
 [ext_resource type="Texture2D" uid="uid://bbie8sax80rfg" path="res://garlic.png" id="3_8x6x7"]
 [ext_resource type="Script" uid="uid://cpwwrt0ssa8y1" path="res://button_1.gd" id="4_lsal0"]
-[ext_resource type="PackedScene" uid="uid://blsvopj7jeai" path="res://scenes/Themedtimer.tscn" id="5_guljb"]
+[ext_resource type="PackedScene" uid="uid://blsvopj7jeai" path="res://scenes/ThemedTimer.tscn" id="5_guljb"]
 
 [node name="Minigame_2" type="Node2D" unique_id=2114560012]
 script = ExtResource("1_k70ht")
 
 [node name="ScrollingBackground" type="Parallax2D" parent="." unique_id=620849543]
 repeat_size = Vector2(1000, 0)
+autoscroll = Vector2(100, 0)
 
 [node name="Background" type="TextureRect" parent="ScrollingBackground" unique_id=1962582430]
 offset_left = 2.0
@@ -52,4 +53,8 @@ offset_bottom = 583.0
 texture_normal = ExtResource("3_8x6x7")
 script = ExtResource("4_lsal0")
 
-[node name="themed_timer" parent="." unique_id=2035142341 instance=ExtResource("5_guljb")]
+[node name="Themedtimer" parent="." unique_id=2035142341 instance=ExtResource("5_guljb")]
+
+[node name="timer" type="RichTextLabel" parent="Themedtimer" unique_id=1750785020]
+offset_right = 40.0
+offset_bottom = 40.0

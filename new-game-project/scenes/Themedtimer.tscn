@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://blsvopj7jeai"]
 
-[ext_resource type="Script" uid="uid://dt3nc4our1mgp" path="res://Themedtimer.gd" id="1_ibn77"]
+[ext_resource type="Script" uid="uid://dt3nc4our1mgp" path="res://ThemedTimer.gd" id="1_ambu1"]
 
 [node name="Themedtimer" type="Node2D" unique_id=2035142341]
-script = ExtResource("1_ibn77")
+script = ExtResource("1_ambu1")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=172061059]
 offset_right = 40.0

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://cmtjg2477dd3n"]
+
+[ext_resource type="Texture2D" uid="uid://bxv1q73dmpf3p" path="res://Free-Sky-with-Clouds-Background-Pixel-Art9-3707783257.jpg" id="1_1p5v7"]
+[ext_resource type="FontFile" uid="uid://dybc4owfo87u0" path="res://PixelifySans-VariableFont_wght.ttf" id="2_5d8rp"]
+
+[node name="done_screen" type="Node2D" unique_id=2125117797]
+
+[node name="Background" type="TextureRect" parent="." unique_id=187475190]
+offset_right = 1155.0
+offset_bottom = 648.0
+texture = ExtResource("1_1p5v7")
+expand_mode = 1
+
+[node name="appreciation" type="RichTextLabel" parent="." unique_id=2054570737]
+offset_left = 427.0
+offset_top = 231.0
+offset_right = 1019.0
+offset_bottom = 460.0
+theme_override_fonts/normal_font = ExtResource("2_5d8rp")
+theme_override_font_sizes/normal_font_size = 45
+text = "You Did it!"
+
+[node name="Start game" type="Button" parent="." unique_id=2086685069]
+offset_right = 197.0
+offset_bottom = 47.0
+theme_override_fonts/font = ExtResource("2_5d8rp")
+theme_override_font_sizes/font_size = 32
+text = "Start Game"

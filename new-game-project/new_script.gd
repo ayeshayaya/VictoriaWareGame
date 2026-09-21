@@ -32,6 +32,7 @@ func _process(delta: float) -> void: # running every frame brochacho
 		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # back to intermission
 		
 
-func garlic_collect() -> void: # cool function that you connect to those garlics
-	garlic_collected = garlic_collected +1
-	return
+func garlic_collect() -> void:
+	garlic_collected += 1
+
+		
