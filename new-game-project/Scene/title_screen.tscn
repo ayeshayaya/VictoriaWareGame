@@ -30,7 +30,7 @@ offset_top = 258.0
 offset_right = 674.0
 offset_bottom = 483.0
 
-[node name="Start" type="Button" parent="VBoxContainer" unique_id=1608591452]
+[node name="Start game" type="Button" parent="VBoxContainer" unique_id=1608591452]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_axahy")
 theme_override_font_sizes/font_size = 32
@@ -49,5 +49,5 @@ theme_override_font_sizes/font_size = 32
 text = "Quit
 "
 
-[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start game" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
