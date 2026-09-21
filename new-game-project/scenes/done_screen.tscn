@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c8vi2iekye0q6"]
+
+[ext_resource type="Texture2D" uid="uid://bxv1q73dmpf3p" path="res://Free-Sky-with-Clouds-Background-Pixel-Art9-3707783257.jpg" id="1_3rr80"]
+[ext_resource type="FontFile" uid="uid://dybc4owfo87u0" path="res://PixelifySans-VariableFont_wght.ttf" id="2_1q1k2"]
+
+[node name="done_screen" type="Node2D" unique_id=1573278821]
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=440771796]
+offset_top = 2.0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_3rr80")
+expand_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1653142089]
+offset_left = 470.0
+offset_top = 299.0
+offset_right = 818.0
+offset_bottom = 649.0
+theme_override_fonts/normal_font = ExtResource("2_1q1k2")
+theme_override_font_sizes/normal_font_size = 45
+text = "You did it!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=242108989]
+offset_left = 479.0
+offset_top = 365.0
+offset_right = 681.0
+offset_bottom = 590.0
+
+[node name="Start game" type="Button" parent="VBoxContainer" unique_id=5006302]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1q1k2")
+theme_override_font_sizes/font_size = 32
+text = "Start Game"
+
+[node name="Settings" type="Button" parent="VBoxContainer" unique_id=1066728200]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1q1k2")
+theme_override_font_sizes/font_size = 32
+text = "Settings"
+
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=919203234]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1q1k2")
+theme_override_font_sizes/font_size = 32
+text = "Quit
+"

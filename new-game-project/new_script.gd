@@ -1,25 +1,37 @@
-# the onreadys below run immediately at the start of the game, preventing 
-# errors related to variable that haven't been defined yet in later scripts 
-
 extends Node2D
-@onready var player: CharacterBody2D = $"../Player" # grabs the parent node
-@onready var self_area = $Area2D
-@onready var player_area = $"../Player/Area2D"
+@onready var themed_timer: Node2D = $ThemedTimer 
+# ^^^ You dragged this in the scene by the way 
 
-# make a signal
-signal garlic_collected
 
-func _process(delta: float) -> void: # this runs EVERY FRAME! 
+
+var garlic_collected = 0 # just keeping track of garlic collected
+var timer_end = false # boolean (true or false) stating whether the timer ended
+
+func _ready() -> void:
+
+		#Below you can see that I have a function that I named. I grab a 
+		#function from it that was created in it's script and use `await` to 
+		# tell the script to wait for a signal, or for when a function finshes
+
+
+	await themed_timer.Timer(10.0) #accessing a function from this node
+	#after this is compeleted...
+	timer_end = true # now we're saying "oh ye you ran out of time"
+
+func _process(delta: float) -> void: # running every frame brochacho
 	
-	if player_area.overlaps_area(self_area): # checks if overlapping
-		if self.visible:
-			emit_signal("garlic_collected") #signal broadcast
-			self.hide() #removed from player sight; collected
+	if garlic_collected == 3: # the double equals is just an argument asking if it's the same, with "=" it'll give an error
+		if Global.minigames_done > 3: # we access a global script and see how many minigames have been compeleted
+			get_tree().change_scene_to_file("res://scenes/done_screen.tscn") # change current play scene into another, but you make your own finish screen in a later challenge, dont worry abt this rn
+		else:
+			get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # go back to the intermission scene
+	
+	if timer_end: # if the timer does end...
+		Global.minigames_done -=1 #go back a minigame
+		Global.lives -= 1 # lose ur lives
+		get_tree().change_scene_to_file("res://scenes/timer_screen.tscn") # back to intermission
 		
 
-# Because you're emitting a signal here, you need to connect that signal to 
-# something to actually make it do a function. To do that, go to the
-# `Signals` menu next to the inspector tab and double click it. 
-# You would then need to connect it to the parent script or scene script
-# and also name it something. You can name it ` garlic_collect` as seen 
-# below, in the next script.
+func garlic_collect() -> void: # cool function that you connect to those garlics
+	garlic_collected = garlic_collected +1
+	return
