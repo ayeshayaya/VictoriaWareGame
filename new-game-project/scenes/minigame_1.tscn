@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://d1c0qlfnfpa44" path="res://a.jpg" id="2_keeiu"]
 [ext_resource type="PackedScene" uid="uid://dp07sl4gefcbx" path="res://scenes/player.tscn" id="3_d7yb5"]
 [ext_resource type="Script" uid="uid://ba27sa137jhjv" path="res://new_script.gd" id="4_cgti3"]
-[ext_resource type="Script" uid="uid://cuuesegaxd5tj" path="res://scenes/area_2d.gd" id="5_j1cg4"]
+[ext_resource type="Script" uid="uid://c2bm63u4cikbb" path="res://scenes/garlic.gd" id="4_vc5od"]
 [ext_resource type="Texture2D" uid="uid://bbie8sax80rfg" path="res://garlic.png" id="5_kc8mu"]
 [ext_resource type="PackedScene" uid="uid://blsvopj7jeai" path="res://scenes/ThemedTimer.tscn" id="6_j1cg4"]
 
@@ -15,7 +15,7 @@ length = 0.96666664
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Garlic/Garlic:position:x")
+tracks/0/path = NodePath("garlics/Garlic/Garlic:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,7 +26,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Garlic/Garlic:position:y")
+tracks/1/path = NodePath("garlics/Garlic/Garlic:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ resource_name = "floating"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Garlic/Garlic:position:x")
+tracks/0/path = NodePath("garlics/Garlic/Garlic:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -51,7 +51,7 @@ tracks/0/keys = {
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Garlic/Garlic:position:y")
+tracks/1/path = NodePath("garlics/Garlic/Garlic:position:y")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -128,13 +128,16 @@ shape = SubResource("RectangleShape2D_7xapb")
 
 [node name="Player" parent="." unique_id=1218335389 instance=ExtResource("3_d7yb5")]
 
-[node name="Garlic" type="Node2D" parent="." unique_id=1017403982]
+[node name="garlics" type="Node2D" parent="." unique_id=281128686]
 
-[node name="animation" type="AnimationPlayer" parent="Garlic" unique_id=1165373885]
-root_node = NodePath("../..")
+[node name="Garlic" type="Node2D" parent="garlics" unique_id=1017403982]
+script = ExtResource("4_vc5od")
+
+[node name="animation" type="AnimationPlayer" parent="garlics/Garlic" unique_id=1165373885]
+root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_7vvh0")
 
-[node name="Garlic" type="TextureRect" parent="Garlic" unique_id=1798367561]
+[node name="Garlic" type="TextureRect" parent="garlics/Garlic" unique_id=1798367561]
 offset_left = 586.0
 offset_top = 392.0
 offset_right = 710.0
@@ -142,21 +145,21 @@ offset_bottom = 473.0
 texture = ExtResource("5_kc8mu")
 expand_mode = 1
 
-[node name="Area2D" type="Area2D" parent="Garlic" unique_id=620305814]
+[node name="Area2D" type="Area2D" parent="garlics/Garlic" unique_id=620305814]
 position = Vector2(660, 415)
-script = ExtResource("5_j1cg4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic/Area2D" unique_id=839109963]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garlics/Garlic/Area2D" unique_id=839109963]
 position = Vector2(-7, 30)
 shape = SubResource("CircleShape2D_7xapb")
 
-[node name="Garlic2" type="Node2D" parent="." unique_id=773399783]
+[node name="Garlic2" type="Node2D" parent="garlics" unique_id=773399783]
+script = ExtResource("4_vc5od")
 
-[node name="animation" type="AnimationPlayer" parent="Garlic2" unique_id=1841539033]
-root_node = NodePath("../..")
+[node name="animation" type="AnimationPlayer" parent="garlics/Garlic2" unique_id=1841539033]
+root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_7vvh0")
 
-[node name="Garlic" type="TextureRect" parent="Garlic2" unique_id=606592579]
+[node name="Garlic" type="TextureRect" parent="garlics/Garlic2" unique_id=606592579]
 offset_left = 411.0
 offset_top = 226.0
 offset_right = 535.0
@@ -164,21 +167,21 @@ offset_bottom = 307.0
 texture = ExtResource("5_kc8mu")
 expand_mode = 1
 
-[node name="Area2D" type="Area2D" parent="Garlic2" unique_id=969468712]
+[node name="Area2D" type="Area2D" parent="garlics/Garlic2" unique_id=969468712]
 position = Vector2(660, 415)
-script = ExtResource("5_j1cg4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic2/Area2D" unique_id=1140160709]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garlics/Garlic2/Area2D" unique_id=1140160709]
 position = Vector2(-192, -147)
 shape = SubResource("CircleShape2D_7xapb")
 
-[node name="Garlic3" type="Node2D" parent="." unique_id=554282828]
+[node name="Garlic3" type="Node2D" parent="garlics" unique_id=554282828]
+script = ExtResource("4_vc5od")
 
-[node name="animation" type="AnimationPlayer" parent="Garlic3" unique_id=255288120]
-root_node = NodePath("../..")
+[node name="animation" type="AnimationPlayer" parent="garlics/Garlic3" unique_id=255288120]
+root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_7vvh0")
 
-[node name="Garlic" type="TextureRect" parent="Garlic3" unique_id=1200506240]
+[node name="Garlic" type="TextureRect" parent="garlics/Garlic3" unique_id=1200506240]
 offset_left = 842.0
 offset_top = 291.0
 offset_right = 966.0
@@ -186,11 +189,10 @@ offset_bottom = 372.0
 texture = ExtResource("5_kc8mu")
 expand_mode = 1
 
-[node name="Area2D" type="Area2D" parent="Garlic3" unique_id=711991504]
+[node name="Area2D" type="Area2D" parent="garlics/Garlic3" unique_id=711991504]
 position = Vector2(660, 415)
-script = ExtResource("5_j1cg4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Garlic3/Area2D" unique_id=599778356]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="garlics/Garlic3/Area2D" unique_id=599778356]
 position = Vector2(235, -81)
 shape = SubResource("CircleShape2D_7xapb")
 
@@ -200,6 +202,5 @@ shape = SubResource("CircleShape2D_7xapb")
 offset_right = 40.0
 offset_bottom = 40.0
 
-[connection signal="body_entered" from="Garlic/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Garlic2/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="Garlic3/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="garlics/Garlic2/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="garlics/Garlic3/Area2D" to="." method="_on_area_2d_body_entered"]
